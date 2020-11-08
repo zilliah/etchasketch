@@ -1,9 +1,9 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(4, 50px);
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
     margin: 10% 20%;
-
+    height: 80vh;
 }
 
 .square {
@@ -14,3 +14,6 @@
 .changed {
     background-color: slateblue;
 }
+
+/* mmmm, make a flexbox around the control bits and the grid container 
+to make things show up better*/
