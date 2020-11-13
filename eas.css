@@ -15,5 +15,10 @@
     background-color: slateblue;
 }
 
+input.invalid {
+    
+}
+
 /* mmmm, make a flexbox around the control bits and the grid container 
 to make things show up better*/
+
