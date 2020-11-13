@@ -3,23 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive etch-a-sketch toy">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="eas.css">
+    <link re="stylesheet" href="normalize.css">
     <title>Etch a Sketch</title>
 </head>
 <body>
-    <div>
+    <div class="flex-container">
         <section class="controls">
             <h1>Etch a Sketch</h1>
-            <label for="x-axis">Number of rows:</label>
-            <input type="number" name="x-axis" min="1" max="60">
-            <label for="y-axis">Number of columns:</label>
-            <input type="number" name="y-axis" min="1" max="60">
-            <button name="resize" value="true">Resize</button>
-            <button name="reset" value="true" >Reset</button> 
-            <p class="invalid-message"><strong>Please enter a number between 1 and 60.</strong></p>
+            <fieldset>
+                <legend>Resize the board</legend>
+            	<div class="coordinates-input">
+            	    <label for="x-axis">Number of rows:</label>
+            	    <input type="number" name="x-axis" min="1" max="60">
+            	</div>
+            	<div class="coordinates-input">
+            	    <label for="y-axis">Number of columns:</label>
+            	    <input type="number" name="y-axis" min="1" max="60">
+            	    
+            	</div>
+            	<button name="resize" value="true">Resize</button>
+            	
+                <p class="invalid-message"><strong>Please enter a number 1 - 60.</strong></p>
+            </fieldset>
+            <button name="reset" value="true" >Erase</button> 
+
+            <footer>
+                <span>Built by Kerry Smart 2020</span>
+                <a target="_blank" href="https://github.com/zilliah/etchasketch">Source code</a>
+
+            </footer>
         </section>
     
-        <section class="container">
+        <section class="sketch-container">
         </section>
         <script src="eas.js"></script>
     </div>

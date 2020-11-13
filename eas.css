@@ -1,23 +1,104 @@
 :root {
-    --error-color: rgb(184, 0, 0);
+    --error-color: rgb(207, 21, 0);
+    --border-color: salmon;
+    --dark-color: slateblue;
+    --bright-color: aquamarine;
 }
 
-.container {
+body {
+    color: var(--dark-color);
+    background-color: rgb(206, 255, 239);
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.6em;
+
+}
+
+h1 {
+    font-size: 2em;
+}
+
+a {
+    color: inherit;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7em;
+}
+
+div.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+/* controls */
+
+button {
+    background: var(--dark-color);
+    color: white;
+    border: none;
+    height: 3em;
+    width: 6em;
+    margin: 1em;
+    font-size: inherit;
+}
+
+button:focus {
+    outline-color: var(--border-color);
+}
+
+button[name="reset"] {
+    margin: 2.5em;
+}
+
+.controls {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.coordinates-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    margin: .3em 0 .3em 1em;
+    font-size: 0.6em;
+}
+
+fieldset {
+    border-color: var(--dark-color);
+    padding: 1.5em;;
+}
+
+
+/* etch a sketch panel */
+
+.sketch-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
-    margin: 10% 20%;
+    margin: 10px;
     height: 80vh;
+    width: 80vh;
+    border: 3px solid var(--border-color);
+    /* flex-grow: 2; */
 }
 
 .square {
-    background-color: aquamarine;
-    border: 1px solid salmon;
+    background-color: var(--bright-color);
+    border: 1px solid var(--border-color);
 }
 
 .changed {
-    background-color: slateblue;
+    background-color: var(--dark-color);
 }
+
+
+/* errors */
 
 input.invalid {
     box-shadow: 0 0 8px var(--error-color);
@@ -28,8 +109,6 @@ input.invalid {
     color: white;
     padding: 10px;
     display: none;
+    text-align: center;
+    box-shadow: 0 0 8px var(--error-color);
 }
-
-/* mmmm, make a flexbox around the control bits and the grid container 
-to make things show up better*/
-

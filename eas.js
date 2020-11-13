@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".sketch-container");
 
 
 
@@ -52,7 +52,7 @@ const validate = n => {
 const createBoard = (x=16, y=16) => {
 
     //clear the old board
-    let oldDivs = document.querySelectorAll(".container div");
+    let oldDivs = document.querySelectorAll(".sketch-container div");
     oldDivs.forEach(div => {
         container.removeChild(div);
     });
