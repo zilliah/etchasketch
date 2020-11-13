@@ -31,11 +31,12 @@ const swapMode = () => {
     if (currMode === "Draw") {
         activateErase();
         currMode = "Erase";
+        swapButton.textContent = "Draw";
     } else if (currMode === "Erase") {
         activateDraw();
         currMode = "Draw";
+        swapButton.textContent = "Erase";
     }
-    swapButton.textContent = currMode;
 }
 
 //on right click
