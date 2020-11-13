@@ -1,3 +1,7 @@
+:root {
+    --error-color: rgb(184, 0, 0);
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -16,7 +20,14 @@
 }
 
 input.invalid {
-    
+    box-shadow: 0 0 8px var(--error-color);
+}
+
+.invalid-message {
+    background-color: var(--error-color);
+    color: white;
+    padding: 10px;
+    display: none;
 }
 
 /* mmmm, make a flexbox around the control bits and the grid container 

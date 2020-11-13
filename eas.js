@@ -13,38 +13,33 @@ const activateDraw = () => {
 };
 
 
-
+//resize board
 let x, y;
 
 const xVar = document.querySelector("input[name=x-axis");
 const yVar = document.querySelector("input[name=y-axis");
-
+const errorMessage = document.querySelector(".invalid-message");
 
 
 const resizeBtn = document.querySelector("button[name='resize']");
 resizeBtn.addEventListener("click", event => {
     x = parseInt(xVar.value);
     y = parseInt(yVar.value);
+    xVar.classList.remove("invalid");
+    yVar.classList.remove("invalid");
     
-    
-    
+    //validate input
     if (!validate(x) || !validate(y))  {
-        console.log("one or more of the values ain't right");
-        /* OK SO
-        this is stupid
-        when i made it a form it was doing form submission stuff I don't understand yet
-        so everything on the page was reloading and the drawing process was running twice
+        if (!validate(x)) xVar.classList.add("invalid");
+        if (!validate(y)) yVar.classList.add("invalid");
+        errorMessage.style.display = "block";
+       return;
+    } else {
+        xVar.classList.remove("invalid");
+        yVar.classList.remove("invalid");
+        errorMessage.style.display = "none";
+    }
 
-        so i can't use the built in form validation stuff bc i dnon' want to actually submit anything 
-        so I have to do my own validation
-        which is fine bc i was sort of doing that anyway
-        GOD
-        */
-    } 
-    //TODO need to handle incorrect input to actually prompt  user
-    //how do I want to do this? 
-    //could popup, but it's kinda annoying
-    //add .invalid class and show message?
     createBoard(x, y);
     
 });
@@ -54,17 +49,10 @@ const validate = n => {
     else return Number.isInteger(n);
 }
 
-
-
-
 const createBoard = (x=16, y=16) => {
-    //debugger;
-
-    console.log(`time for a new board! the new dimensions are: X:${x} and Y:${y}`);
 
     //clear the old board
     let oldDivs = document.querySelectorAll(".container div");
-
     oldDivs.forEach(div => {
         container.removeChild(div);
     });
@@ -76,19 +64,15 @@ const createBoard = (x=16, y=16) => {
     
     //create divs based on input numbers
     let easSquare = document.createElement("div");
-    easSquare.classList.add("square");
-    
+    easSquare.classList.add("square");    
     for (let i = 0; i < x * y; i++) {
         let currSquare = easSquare.cloneNode();
         container.appendChild(currSquare);
     }
-
     activateDraw();
 };
 
 createBoard();
-
-
 
 //reset (clear board)
 let resetButton = document.querySelector("button[name='reset']");
