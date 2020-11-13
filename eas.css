@@ -24,7 +24,7 @@ a {
 footer {
     display: flex;
     flex-direction: column;
-    font-size: 0.7em;
+    font-size: 0.7em;;
 }
 
 div.flex-container {
@@ -50,10 +50,6 @@ button:focus {
     outline-color: var(--border-color);
 }
 
-button[name="reset"] {
-    margin: 2.5em;
-}
-
 .controls {
     display: flex;
     flex-flow: column wrap;
@@ -71,9 +67,13 @@ input {
 
 fieldset {
     border-color: var(--dark-color);
-    padding: 1.5em;;
+    padding: 1.5em;
+    margin: 0.5em 0;
 }
 
+p.erase {
+    font-size: 0.7em;
+}
 
 /* etch a sketch panel */
 

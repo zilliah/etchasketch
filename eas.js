@@ -12,6 +12,44 @@ const activateDraw = () => {
     });
 };
 
+//"erase" function
+const activateErase = () => {
+    const squaresList = document.querySelectorAll(".square");
+    squaresList.forEach(square => {
+        square.addEventListener("mouseenter", event => {
+            square.classList.remove("changed");
+        });
+    });
+};
+
+
+
+//swap modes - on right click and on button click
+const swapButton = document.querySelector("button[name='switch-mode']");
+let currMode = "Draw";
+const swapMode = () => {
+    if (currMode === "Draw") {
+        activateErase();
+        currMode = "Erase";
+    } else if (currMode === "Erase") {
+        activateDraw();
+        currMode = "Draw";
+    }
+    swapButton.textContent = currMode;
+}
+
+//on right click
+container.addEventListener("contextmenu", event => {
+    event.preventDefault();
+    swapMode();
+});
+
+//on button click
+swapButton.addEventListener("click", event => {
+    swapMode();
+});
+
+
 
 //resize board
 let x, y;
