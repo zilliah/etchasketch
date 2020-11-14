@@ -1,4 +1,4 @@
-const container = document.querySelector(".sketch-container");
+let container = document.querySelector(".sketch-container");
 
 
 

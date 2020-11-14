@@ -22,8 +22,8 @@ a {
 }
 
 footer {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     font-size: 0.7em;
     margin: 1em 0;
 }
@@ -31,7 +31,7 @@ footer {
 div.flex-container {
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: flex-end;
     flex-wrap: wrap;
 }
 
