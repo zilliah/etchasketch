@@ -1,6 +1,8 @@
-# etchasketch
-A practice project making a simple etch a sketch 
+# Etchasketch
 
-Implementation of [Odin Project's etch a sketch project](https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project).
+An online etch-a-sketch! Right click on the board to switch between drawing and erasing.
 
-[Live demo](https://zilliah.github.io/etchasketch/).
+[Play with it here](https://zilliah.github.io/etchasketch/).
+
+![eas-photo](https://user-images.githubusercontent.com/6020261/167315625-aa9fe0cd-6155-46e4-a7a5-3bec9f552a88.png)
+
