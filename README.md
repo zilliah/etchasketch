@@ -12,4 +12,4 @@ Built with HTML/CSS/vanilla Javascript.
 
 ## TIL
 
-This project helped to solify my understanding of Javascript event listeners and DOM manipulation. I also learned how to change the behaviour of right clicks and to validate even the simplest input. 
+This project helped to solidify my understanding of Javascript event listeners and DOM manipulation. I also learned how to change the behaviour of right clicks and to validate even the simplest input. 
